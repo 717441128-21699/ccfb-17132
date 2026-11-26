@@ -1,0 +1,24 @@
+{
+  "name": "salt-pan-aerial-analysis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "海盐场蒸发池无人机航拍拼接、颜色分析与波美度浓度图系统",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:fast": "vitest run tests/pipeline.test.ts tests/color.test.ts",
+    "verify:perf": "vitest run tests/perf500.test.ts",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:perf": "node scripts/perf-browser.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "playwright-core": "^1.55.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
+  }
+}
