@@ -1,0 +1,297 @@
+:root {
+  --bg: #0f1720;
+  --panel: #182330;
+  --panel-2: #20303f;
+  --line: #2c3e50;
+  --text: #e6edf3;
+  --muted: #8ba0b2;
+  --accent: #4cc2ff;
+  --accent-2: #2ea043;
+  --warn: #e3a008;
+  --alert: #f85149;
+  --ridge: #c9a36a;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.sidebar h1 {
+  font-size: 16px;
+  margin: 0 18px 18px;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 18px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.nav-item.active {
+  background: var(--panel-2);
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  padding: 24px 28px;
+  min-width: 0;
+}
+
+.page-title {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.page-desc {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+}
+
+label.field {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+label.field span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+select,
+input,
+button.btn {
+  font: inherit;
+}
+
+select,
+input[type='number'],
+input[type='text'] {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+button.btn {
+  background: var(--accent);
+  color: #04263a;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  filter: brightness(1.1);
+}
+
+button.btn.secondary {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+button.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 140px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.stat .k {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat .v {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.progress-wrap {
+  background: var(--panel-2);
+  border-radius: 6px;
+  height: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.2s;
+}
+
+.progress-text {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.canvas-host {
+  background: #0a0f15;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 72vh;
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+tr.alert {
+  background: rgba(248, 81, 73, 0.12);
+}
+
+tr.warning {
+  background: rgba(227, 160, 8, 0.1);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.badge.normal {
+  background: rgba(46, 160, 67, 0.2);
+  color: #56d364;
+}
+
+.badge.warning {
+  background: rgba(227, 160, 8, 0.2);
+  color: var(--warn);
+}
+
+.badge.alert {
+  background: rgba(248, 81, 73, 0.2);
+  color: var(--alert);
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 5px;
+  vertical-align: -1px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.mono {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
